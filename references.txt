@@ -1,0 +1,1 @@
+Oyallon et al., Scaling the Scattering Transform: Deep Hybrid Networks - https://hal.inria.fr/hal-01495734/document
