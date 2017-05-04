@@ -1,0 +1,2 @@
+accuracy, cnn_type, data_augm, epochs, train_size
+51.85, keras_cnn, 1, 200, 1000
