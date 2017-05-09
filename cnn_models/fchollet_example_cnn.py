@@ -35,5 +35,4 @@ model.add(Activation('softmax'))
 
 # initiate RMSprop optimizer
 opt = keras.optimizers.rmsprop(lr=0.001, decay=1e-6)
-
-
+callbacks = []

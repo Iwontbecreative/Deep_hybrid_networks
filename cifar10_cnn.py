@@ -16,7 +16,8 @@ from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 import numpy as np
 
-from cnn_models.fchollet_example_cnn import model, opt
+# from cnn_models.fchollet_example_cnn import model, opt, callbacks
+from cnn_models.WRN import model, opt, callbacks
 
 batch_size = 32
 num_classes = 10
@@ -56,7 +57,8 @@ if not data_augmentation:
               batch_size=batch_size,
               epochs=epochs,
               validation_data=(x_test, y_test),
-              shuffle=True)
+              shuffle=True,
+	      callbacks=callbacks)
 else:
     print('Using real-time data augmentation.')
     # This will do preprocessing and realtime data augmentation:
@@ -81,4 +83,5 @@ else:
                                      batch_size=batch_size),
                         steps_per_epoch=x_train.shape[0] // batch_size,
                         epochs=epochs,
-                        validation_data=(x_test, y_test))
+                        validation_data=(x_test, y_test),
+			callbacks=callbacks)
