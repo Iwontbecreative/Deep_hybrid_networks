@@ -261,5 +261,5 @@ class ResnetBuilder(object):
 
 
 model = ResnetBuilder.build_resnet_18((3, 32, 32), 10)
-opt = Adam(lr=0.01)
+opt = Adam()
 callbacks = [lr_reducer, early_stopper]

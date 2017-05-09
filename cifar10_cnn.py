@@ -28,7 +28,7 @@ data_augmentation = True
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
 # Downsize to 1000 samples.
-idx = np.random.choice(np.arange(len(x_test)), 1000, replace=False)
+idx = np.random.choice(np.arange(len(x_train)), 1000, replace=False)
 x_train = x_train[idx]
 y_train = y_train[idx]
 print('x_train shape:', x_train.shape)
