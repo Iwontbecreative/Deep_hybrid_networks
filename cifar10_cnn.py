@@ -23,6 +23,7 @@ batch_size = 32
 num_classes = 10
 epochs = 200
 data_augmentation = True
+n_train=1000
 
 # The data, shuffled and split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -31,7 +32,7 @@ data_augmentation = True
 classes=np.unique(y_train)
 inds_all=np.array([],dtype='int32')
 for cl in classes:
-    inds=np.random.choice(np.where(np.array(y_train)==cl)[0], n_train/num_classes)
+    inds=np.random.choice(np.where(np.array(y_train)==cl)[0], n_train/len(classes))
     inds_all=np.r_[inds,inds_all]
     
 x_train = x_train[inds_all]
