@@ -28,9 +28,14 @@ data_augmentation = True
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
 # Downsize to 1000 samples.
-idx = np.random.choice(np.arange(len(x_train)), 1000, replace=False)
-x_train = x_train[idx]
-y_train = y_train[idx]
+classes=np.unique(y_train)
+inds_all=np.array([],dtype='int32')
+for cl in classes:
+    inds=np.random.choice(np.where(np.array(y_train)==cl)[0], n_train/num_classes)
+    inds_all=np.r_[inds,inds_all]
+    
+x_train = x_train[inds_all]
+y_train = y_train[inds_all]
 print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
