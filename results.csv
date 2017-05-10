@@ -1,3 +1,8 @@
-accuracy, cnn_type, data_augm, epochs, train_size
+accuracy, ml, data_augm, epochs, train_size
 51.85, keras_cnn, 1, 200, 1000
 52.8, WRN_cnn, 1, 32, 1000
+29.7, SVM (linear, one vs one), 0, 0, 1000
+24, SVM (linear, one vs all), 0, 0, 1000
+24.5, SVM (gaussian), 0, 0, 1000
+24.6, RFC (5 trees), 0, 0, 1000
+36, RFC (300 trees, 40 feat, 20 depth), 0, 0, 1000

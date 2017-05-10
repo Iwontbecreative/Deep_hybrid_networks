@@ -1,4 +1,5 @@
 from sklearn.svm import SVC, LinearSVC
+from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 
 from keras.datasets import cifar10
@@ -36,12 +37,23 @@ x_test /= 255
 # Model
 
 # Linear SVM
-clf = SVC(kernel='linear')
-clf.fit(x_train, y_train)
-y_pred = clf.predict(x_test)
-print("Linear SVM accuracy (1 vs 1):", sum(y_pred == y_test)/len(y_pred))
+# clf = SVC(kernel='linear')
+# clf.fit(x_train, y_train)
+# y_pred = clf.predict(x_test)
+# print("Linear SVM accuracy (1 vs 1):", sum(y_pred == y_test)/len(y_pred))
 
-clf = LinearSVC()
+# clf = LinearSVC()
+# clf.fit(x_train, y_train)
+# y_pred = clf.predict(x_test)
+# print("Linear SVM accuracy (1 vs all):", sum(y_pred == y_test)/len(y_pred))
+
+
+# clf = SVC(kernel='rbf')
+# clf.fit(x_train, y_train)
+# y_pred = clf.predict(x_test)
+# print("Gaussian (rbf) SVM accuracy (1 vs 1):", sum(y_pred == y_test)/len(y_pred))
+
+clf = RandomForestClassifier(300, max_features=40, max_depth=20)
 clf.fit(x_train, y_train)
 y_pred = clf.predict(x_test)
-print("Linear SVM accuracy (1 vs all):", sum(y_pred == y_test)/len(y_pred))
+print("RFC accuracy:", sum(y_pred == y_test)/len(y_pred))
