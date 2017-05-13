@@ -1,0 +1,5 @@
+Gaussian (rbf) (1 vs 1),29.9 + 1.2
+Linear SVM (1 vs 1),28.6 + 0.8
+Linear SVM (1 vs all),24 + 0.8
+Logistic Regression,27.2+ 0.6
+"RFC (300 trees, 40 feat, 20 depth)", 35.4 + 0.4

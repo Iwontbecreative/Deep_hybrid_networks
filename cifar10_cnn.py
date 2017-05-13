@@ -34,7 +34,7 @@ inds_all=np.array([],dtype='int32')
 for cl in classes:
     inds=np.random.choice(np.where(np.array(y_train)==cl)[0], int(n_train/len(classes)))
     inds_all=np.r_[inds,inds_all]
-    
+
 x_train = x_train[inds_all]
 y_train = y_train[inds_all]
 print('x_train shape:', x_train.shape)
